@@ -22,6 +22,17 @@ def get_numbers():
     return numbers
 
 
+def add_numbers(numbers):
+    '''
+    Add all the numbers in the list
+    Args(aggruments):
+                     numbers(list): list of numbers to add
+                     returns:
+                        float: Sum of all numbers
+    '''
+    return sum(numbers)
+
+
 def main():
     # function to run calculator
     print("=" * 50)
@@ -39,8 +50,12 @@ def main():
     print("1. Add")
     print("2. Multiply")
 
-    # choice = input("Enter your choice (1 or 2): ")
-    # this implementation will be done by Keilar
+    choice = input("Enter your choice (1 or 2): ").strip()
+    if choice == '1':
+        result = add_numbers(numbers)
+        print(f"\n Result: {' + '.join(map(str, numbers))} = {result}")
+    else:
+        print("Invalid choice")
 
 
 if __name__ == "__main__":
